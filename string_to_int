@@ -1,0 +1,14 @@
+ private static int convertToInteger(String input) {
+        int result = 0;
+
+        for (int i = 0; i < input.length(); i++) {
+            
+            // Convert character to integer using '0'
+            int digit = input.charAt(i) - '0';
+
+            // Apply the operation
+            result = (result * 10) + digit;
+        }
+
+        return result;
+ }
