@@ -1,0 +1,65 @@
+
+class Solution
+{
+    //Function to check if brackets are balanced or not.
+    static boolean ispar(String x)
+    {
+       Stack<Character> st = new Stack<>();
+       
+       for(int i = 0; i < x.length(); i++){
+           
+           char c = x.charAt(i);
+           
+           if(!st.isEmpty()){
+               if(c == ')' && st.peek() == '(' || c == '}' && st.peek() == '{' 
+               || c == ']' && st.peek() == '['){
+                   st.pop();
+               }else{
+                   st.push(c);
+               }
+           }else{
+               st.push(c);
+           }
+       }
+       
+       return st.isEmpty();
+       
+    }
+}
+
+
+TC and SC : O(n) and O(n);
+
+//optimized opraoch would be to use hash map
+//it giver better readablity and avoids using peek() everywhere
+
+
+class Solution
+{
+    //Function to check if brackets are balanced or not.
+    static boolean ispar(String x)
+    {
+       Stack<Character> st = new Stack<>();
+       
+       for(int i = 0; i < x.length(); i++){
+           
+           char c = x.charAt(i);
+           
+           if(!st.isEmpty()){
+               if(c == ')' && st.peek() == '(' || c == '}' && st.peek() == '{' 
+               || c == ']' && st.peek() == '['){
+                   st.pop();
+               }else{
+                   st.push(c);
+               }
+           }else{
+               st.push(c);
+           }
+       }
+       
+       return st.isEmpty();
+       
+    }
+}
+
+TC and SC : O(n) and O(n);
