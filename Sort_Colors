@@ -1,0 +1,26 @@
+class Solution {
+    public void swap(int nums[],int i, int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    public void sortColors(int[] nums) {
+     int low = 0;
+     int i = 0;
+     int high = nums.length-1;
+
+     while(i<=high){
+       if(nums[i]==0){
+            swap(nums,low,i);   //swap with low. increment both i and low.
+            i++;
+            low++;
+         }else if(nums[i]==1){
+             i++;
+         }else{
+             swap(nums,i,high);
+             high--;
+         }
+     }
+    }
+}
